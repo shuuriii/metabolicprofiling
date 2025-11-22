@@ -1,0 +1,77 @@
+================================================================================
+UNSCALED METABOLIC SUBTYPE PROFILES (Task 5 Output)
+================================================================================
+
+These are the characteristic metabolic profiles for each subtype.
+(Values are in original units: FI in uU/mL, FBS in mg/dL, HbA1c in %, etc.)
+
+--------------------------------------------------------------------------------
+            HOMA_IR    FI  HbA1c    FBS    TGL  Creatinine
+Subtype ID                                                
+Subtype 0      2.15   8.5    5.2   95.0   85.0        0.85
+Subtype 1      4.80  18.2    5.8  108.0  145.0        0.92
+Subtype 2      8.50  32.5    6.5  118.0  220.0        0.98
+Subtype 3      1.80   6.8    4.9   88.0   65.0        0.78
+--------------------------------------------------------------------------------
+
+================================================================================
+MARKDOWN FORMAT
+================================================================================
+
+| Subtype ID   |   HOMA_IR |   FI |   HbA1c |   FBS |   TGL |   Creatinine |
+|:-------------|----------:|-----:|--------:|------:|------:|-------------:|
+| Subtype 0    |      2.15 |  8.5 |     5.2 |    95 |    85 |         0.85 |
+| Subtype 1    |      4.80 | 18.2 |     5.8 |   108 |   145 |         0.92 |
+| Subtype 2    |      8.50 | 32.5 |     6.5 |   118 |   220 |         0.98 |
+| Subtype 3    |      1.80 |  6.8 |     4.9 |    88 |    65 |         0.78 |
+
+================================================================================
+FEATURE UNITS AND CLINICAL RANGES
+================================================================================
+
+Feature Units:
+  - HOMA_IR:    Unitless (calculated from FI x FBS / 405)
+  - FI:         Fasting Insulin in uU/mL (micro-units per milliliter)
+  - HbA1c:      Hemoglobin A1c in percentage (%)
+  - FBS:        Fasting Blood Sugar in mg/dL (milligrams per deciliter)
+  - TGL:        Triglycerides in mg/dL
+  - Creatinine: Serum Creatinine in mg/dL
+
+Typical Clinical Ranges:
+  - HOMA_IR:    < 1.0 (normal), 1.0-2.5 (borderline), > 2.5 (insulin resistant)
+  - FI:         2-25 uU/mL (normal fasting range)
+  - HbA1c:      < 5.7% (normal), 5.7-6.4% (prediabetes), >= 6.5% (diabetes)
+  - FBS:        70-100 mg/dL (normal), 100-125 (prediabetes), >= 126 (diabetes)
+  - TGL:        < 150 mg/dL (normal), 150-199 (borderline), >= 200 (high)
+  - Creatinine: 0.6-1.2 mg/dL (normal range, varies by gender/age)
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+Each row represents one metabolic subtype identified by K-Means clustering.
+
+Example Interpretation:
+  - Subtype 0: Moderate metabolic profile (normal to borderline values)
+  - Subtype 1: Elevated insulin resistance (higher HOMA-IR, FI, FBS)
+  - Subtype 2: High-risk metabolic profile (diabetes range HbA1c, high TGL)
+  - Subtype 3: Healthy metabolic profile (lowest values across features)
+
+Use these centers to:
+  1. Understand the metabolic characteristics of each subtype
+  2. Name the subtypes based on their profiles (Task 6)
+  3. Identify which subtype represents which metabolic phenotype
+
+================================================================================
+NOTE: This is a SAMPLE table
+================================================================================
+
+When you run Task 5 (task5_clustering.py) with your actual NHANES data,
+you will get the real cluster centers calculated from your dataset.
+
+The actual values will depend on:
+  - The NHANES 2013-2014 data you downloaded
+  - The participants aged 35+ in your filtered dataset
+  - The MICE imputation results
+  - The K-Means clustering with k=4
+
